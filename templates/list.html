@@ -1,15 +1,15 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <title>Django Practice</title>
-</head>
-<body>
-{% for post in object_list %}
-<ul>
-    <li><h4>{{ post.title }}</h4></li>
-    <li>{{ post.memo }}</li>
-</ul>
+{% extends "base.html" %}
+
+{% block header %}
+list
+{% endblock header%}
+
+
+{% block content %}
+{% for item in object_list %}
+{{ item.title}}
+{{item.memo}}
+
 {% endfor %}
-</body>
-</html>
+
+{% endblock content %}
