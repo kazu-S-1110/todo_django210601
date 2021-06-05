@@ -10,19 +10,15 @@
 </div> 
 {% endblock header%} {% block content %}
 <div class="container">
+  <a href="{% url "create" %}" class="btn btn-danger mb-3" role="button" aria-pressed="true">Create Task</a>
   {% for item in object_list %}
   <div class="alert alert-{{ item.priority }}" role="alert">
-    <h4>{{ item.title}}</h4>
+    <h4>{{ item.title}} </h4>
+    <p> <strong>dueDate</strong> {{item.duedate}} </p>
     <p>{{item.memo}}</p>
-    <a href="{% url "update" item.pk %}" class="btn btn-primary" role="button" aria-pressed="true"
-      >Edit</a 
-    >
-    <a href="{% url "delete" item.pk %}" class="btn btn-success" role="button" aria-pressed="true"
-      >Delete</a
-    >
-    <a href="{% url "detail" item.pk %}" class="btn btn-info" role="button" aria-pressed="true"
-      >Detail</a
-    >
+    <a href="{% url "update" item.pk %}" class="btn btn-primary" role="button" aria-pressed="true">Edit</a>
+    <a href="{% url "delete" item.pk %}" class="btn btn-success" role="button" aria-pressed="true">Delete</a>
+    <a href="{% url "detail" item.pk %}" class="btn btn-info" role="button" aria-pressed="true">Detail</a>
   </div>
   {% endfor %}
 </div>
