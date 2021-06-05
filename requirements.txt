@@ -1,6 +1,6 @@
-asgiref @ file:///tmp/build/80754af9/asgiref_1617740417847/work
+asgiref==3.3.4
 certifi==2020.12.5
-Django @ file:///tmp/build/80754af9/django_1620913015185/work
-psycopg2 @ file:///opt/concourse/worker/volumes/live/d12e789f-5b6c-4947-7cc2-187f3a9c9696/volume/psycopg2_1612298599991/work
-pytz @ file:///tmp/build/80754af9/pytz_1612215392582/work
-sqlparse @ file:///tmp/build/80754af9/sqlparse_1602184451250/work
+Django==3.2.3
+psycopg2==2.8.6
+pytz==2021.1
+sqlparse==0.4.1
