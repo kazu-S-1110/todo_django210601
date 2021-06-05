@@ -14,7 +14,7 @@
   {% for item in object_list %}
   <div class="alert alert-{{ item.priority }}" role="alert">
     <h4>{{ item.title}} </h4>
-    <p> <strong>dueDate</strong> {{item.duedate}} </p>
+    <p> <strong>dueDate</strong> {{item.duedate |date:"Y/m/d"}} </p>
     <p>{{item.memo}}</p>
     <a href="{% url "update" item.pk %}" class="btn btn-primary" role="button" aria-pressed="true">Edit</a>
     <a href="{% url "delete" item.pk %}" class="btn btn-success" role="button" aria-pressed="true">Delete</a>
