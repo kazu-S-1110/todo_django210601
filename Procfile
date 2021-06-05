@@ -1,1 +1,1 @@
-web: todo_django0601
+web: todoproject.wsgi --log-file -
