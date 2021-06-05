@@ -1,28 +1,30 @@
-{% extends "base.html" %}
-
-{% block header %}
+{% extends "base.html" %} {% block header %}
 <div class="jumbotron">
-    <h1 class="display-4">TodoList</h1>
-    <p class="lead"></p>
-    <hr class="my-4">
-    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-</div>
-{% endblock header%}
-
-{% block content %}
+  <h1 class="display-4">TodoList</h1>
+  <p class="lead"></p>
+  <hr class="my-4" />
+  <p>
+    It uses utility classes for typography and spacing to space content out
+    within the larger container.
+  </p>
+</div> 
+{% endblock header%} {% block content %}
 <div class="container">
-
-    {% for item in object_list %}
-    <div class="alert alert-{{ item.priority }}" role="alert">
-        <h4>{{ item.title}}</h4>
-        <p>
-            {{item.memo}}
-        </p>
-        <a href="#" class="btn btn-primary" role="button" aria-pressed="true">Edit</a>
-        <a href="#" class="btn btn-success" role="button" aria-pressed="true">Delete</a>
-        <a href="#" class="btn btn-info" role="button" aria-pressed="true">Detail</a>
-    </div>
-    {% endfor %}
+  {% for item in object_list %}
+  <div class="alert alert-{{ item.priority }}" role="alert">
+    <h4>{{ item.title}}</h4>
+    <p>{{item.memo}}</p>
+    <a href="{% url "update" item.pk %}" class="btn btn-primary" role="button" aria-pressed="true"
+      >Edit</a 
+    >
+    <a href="{% url "delete" item.pk %}" class="btn btn-success" role="button" aria-pressed="true"
+      >Delete</a
+    >
+    <a href="{% url "detail" item.pk %}" class="btn btn-info" role="button" aria-pressed="true"
+      >Detail</a
+    >
+  </div>
+  {% endfor %}
 </div>
 
 {% endblock content %}
